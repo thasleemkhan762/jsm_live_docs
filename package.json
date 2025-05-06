@@ -20,6 +20,7 @@
     "@liveblocks/react-tiptap": "^2.14.0",
     "@liveblocks/react-ui": "^2.14.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@sentry/nextjs": "^9.15.0",
     "@tiptap/react": "^2.10.3",
     "@tiptap/starter-kit": "^2.10.3",
     "class-variance-authority": "^0.7.0",
