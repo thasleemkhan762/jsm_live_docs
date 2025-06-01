@@ -22,5 +22,4 @@ const ActiveCollaborators = () => {
     </ul>
   )
 }
-
 export default ActiveCollaborators
