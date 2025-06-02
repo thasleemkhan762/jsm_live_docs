@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import UserTypeSelector from "./UserTypeSelector";
 import Collaborator from "./Collaborator";
+import { updateDocumentAccess } from "@/lib/actions/room.actions";
 
 interface ShareDocumentDialogProps {
   roomId: string;
@@ -36,19 +37,17 @@ const ShareModal = ({
   const [userType, setUserType] = useState<UserType>("viewer");
 
   const shareDocumentHandler = async () => {
-    if (!email) return;
 
     setLoading(true);
-    try {
-      // TODO: Implement sharing logic here
-      setEmail("");
-      setUserType("viewer");
-      setOpen(false);
-    } catch (error) {
-      console.error("Error sharing document:", error);
-    } finally {
+      await updateDocumentAccess({
+        roomId,
+        email,
+        userType: userType as UserType,
+        updatedBy: user.info
+      });
+
       setLoading(false);
-    }
+   
   };
 
   return (
@@ -140,8 +139,9 @@ const ShareModal = ({
           </div>
           <Button
             type="submit"
+            onClick={shareDocumentHandler}
             className="gradient-blue flex h-full gap-1 px-5"
-            disabled={loading || !email}
+            disabled={loading}
           >
             {loading ? "Sending..." : "Invite"}
           </Button>
