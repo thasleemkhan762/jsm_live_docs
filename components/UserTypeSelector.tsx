@@ -6,7 +6,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { User } from "lucide-react";
 
 const UserTypeSelector = ({
   userType,
@@ -15,7 +14,9 @@ const UserTypeSelector = ({
 }: UserTypeSelectorParams) => {
   const accessChangeHandler = (type: UserType) => {
     setUserType(type);
-    onClickHandler && onClickHandler(type);
+    if (onClickHandler) {
+      onClickHandler(type);
+    }
   };
 
   return (
