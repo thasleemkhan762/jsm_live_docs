@@ -112,7 +112,7 @@ const ShareModal = ({
           <p className="mr-1 hidden sm:block">Share</p>
         </Button>
       </DialogTrigger>
-      <DialogContent className="shad-dialog">
+      <DialogContent>
         <DialogHeader>
           <DialogTitle>Manage who can view this project</DialogTitle>
           <DialogDescription style={{ color: "#757575" }}>
