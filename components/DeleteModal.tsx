@@ -48,7 +48,7 @@ export const DeleteModal = ({ roomId }: DeleteModalProps) => {
           />
         </Button>
       </DialogTrigger>
-      <DialogContent className="shad-dialog">
+      <DialogContent >
         <DialogHeader>
           <Image
             src="/assets/icons/delete-modal.svg"
@@ -65,10 +65,8 @@ export const DeleteModal = ({ roomId }: DeleteModalProps) => {
         </DialogHeader>
 
         <DialogFooter className="mt-5">
-          <DialogClose asChild>
-            <Button className="w-full bg-dark-400 text-white">
-              Cancel
-            </Button>
+        <DialogClose asChild className="w-full bg-dark-400 text-white">
+            Cancel
           </DialogClose>
 
           <Button
